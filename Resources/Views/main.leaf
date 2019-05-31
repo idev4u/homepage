@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<style>
+html, body {
+height: 100%;
+margin: 0;
+}
+</style>
+    <head>
+        #embed("common/header/stylesheet-bootstrap")
+        <title>Norman Sutorius</title>
+    </head>
+    <body>
+        #embed("common/navigation-bar")
+        <div class="container-fluid  h-100 bg-light">
+         <div class="row-fluid">
+            #get(body)
+         </div>
+        </div>
+        #embed("common/scripts/layout-scripts")
+    </body>
+    
+</html>
+

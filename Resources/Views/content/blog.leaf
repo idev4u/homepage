@@ -1,0 +1,11 @@
+#set("body"){
+<div class="container ">
+    <h2 class="display-3 text-center"> Blog </h2>
+    <p class="text-center"> This is the Blog page! </p>
+</div>
+<div class="container">
+    <p class="text-center"> here will be shown a list with all medium blog post</p>
+</div>
+}
+
+#embed("main")

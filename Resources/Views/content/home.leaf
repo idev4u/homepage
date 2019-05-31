@@ -1,0 +1,9 @@
+#set("body"){
+
+    <div class="container ">
+        <h2 class="display-3 text-center"> Home </h2>
+        <p class="text-center"> this is the welcome page! </p>
+    </div>
+}
+
+#embed("main")
