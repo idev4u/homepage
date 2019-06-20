@@ -15,7 +15,7 @@ RUN swift build -c release && mv `swift build -c release --show-bin-path` /build
 
 # Production image
 FROM ubuntu:18.04
-ARG env
+ENV env="production"
 # DEBIAN_FRONTEND=noninteractive for automatic UTC configuration in tzdata
 RUN apt-get -qq update && DEBIAN_FRONTEND=noninteractive apt-get install -y \ 
   libatomic1 libicu60 libxml2 libcurl4 libz-dev libbsd0 tzdata \
@@ -26,7 +26,7 @@ COPY --from=builder /build/lib/* /usr/lib/
 # Uncomment the next line if you need to load resources from the `Public` directory
 #COPY --from=builder /app/Public ./Public
 # Uncomment the next line if you are using Leaf
-#COPY --from=builder /app/Resources ./Resources
+COPY --from=builder /app/Resources ./Resources
 ENV ENVIRONMENT=$env
 
-ENTRYPOINT ./Run serve --env $ENVIRONMENT --hostname 0.0.0.0 --port 80
+ENTRYPOINT ./Run serve --env $ENVIRONMENT --hostname 0.0.0.0 --port 8080
